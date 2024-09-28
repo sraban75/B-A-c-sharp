@@ -38,6 +38,7 @@
             PluginButton = new Button();
             PowerLightButton = new Button();
             GetMonitorInfoButton = new Button();
+            MonitorNameTextBox = new TextBox();
             SuspendLayout();
             // 
             // HeightTextBox
@@ -120,7 +121,7 @@
             // 
             // GetMonitorInfoButton
             // 
-            GetMonitorInfoButton.Location = new Point(1144, 46);
+            GetMonitorInfoButton.Location = new Point(636, 559);
             GetMonitorInfoButton.Name = "GetMonitorInfoButton";
             GetMonitorInfoButton.Size = new Size(231, 23);
             GetMonitorInfoButton.TabIndex = 8;
@@ -128,11 +129,19 @@
             GetMonitorInfoButton.UseVisualStyleBackColor = true;
             GetMonitorInfoButton.Click += GetMonitorInfoButton_Click;
             // 
+            // MonitorNameTextBox
+            // 
+            MonitorNameTextBox.Location = new Point(689, 514);
+            MonitorNameTextBox.Name = "MonitorNameTextBox";
+            MonitorNameTextBox.Size = new Size(100, 23);
+            MonitorNameTextBox.TabIndex = 9;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1536, 1075);
+            Controls.Add(MonitorNameTextBox);
             Controls.Add(GetMonitorInfoButton);
             Controls.Add(PowerLightButton);
             Controls.Add(PluginButton);
@@ -162,5 +171,6 @@
         private Button PluginButton;
         private Button PowerLightButton;
         private Button GetMonitorInfoButton;
+        private TextBox MonitorNameTextBox;
     }
 }

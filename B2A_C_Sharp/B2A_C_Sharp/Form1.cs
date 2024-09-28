@@ -1,3 +1,5 @@
+using System.Reflection;
+
 namespace B2A_C_Sharp
 {
     public partial class Form1 : Form
@@ -109,10 +111,34 @@ namespace B2A_C_Sharp
 
         private void GetMonitorInfoButton_Click(object sender, EventArgs e)
         {
-            var info = @"Model No: " + _monitorModelNo + "\n Manufactured By: " + _monitorManufacturedBy + "\n Brand : " + _monitorBrandName + "";
+            //var info = @"Model No: " + _monitorModelNo + "\n Manufactured By: " + _monitorManufacturedBy + "\n Brand : " + _monitorBrandName + "";
+            //MessageBox.Show(info);
+
+            try
+            {
+                var name = MonitorNameTextBox.Text;
+                var monitorObj = new Monitor();
+                //monitorObj.Name = name;
+                //monitorObj.SetName(name);
 
 
-            MessageBox.Show(info);
+                //var properties = monitorObj.GetType().GetProperties();
+                //var nameProp = properties.FirstOrDefault(c => c.Name == "Name");
+                //nameProp.SetValue(monitorObj, "A");
+
+                var nameField = monitorObj.GetType().GetField("_name", BindingFlags.NonPublic | BindingFlags.Instance);
+                nameField.SetValue(monitorObj, "A");
+
+                var data = monitorObj.Name;
+
+
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+
 
 
         }
